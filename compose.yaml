@@ -1,0 +1,8 @@
+services:
+  noname:
+    build:
+      context: .
+    ports:
+      - "${PORT:-8089}:8089"
+      - "${ONLINE_PORT:-8080}:8080"
+    restart: unless-stopped

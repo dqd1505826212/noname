@@ -38,6 +38,16 @@ pnpm install
 pnpm dev
 ```
 
+### 使用 Docker 部署
+
+在项目根目录执行：
+
+```bash
+docker compose up --build -d
+```
+
+然后访问 <http://localhost:8089>（网页），多人联机服务监听 <http://localhost:8080>（WebSocket）。查看服务日志：`docker compose logs -f`；停止服务：`docker compose down`。
+
 ---
 
 贡献代码可阅读相关文档：

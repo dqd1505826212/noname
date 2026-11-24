@@ -28,6 +28,7 @@ export const defaultConfig = {
 	server: false,
 	port: 8089,
 	debug: false,
+	host: process.env.HOST,
 	dirname: cwd(),
 };
 
@@ -221,7 +222,7 @@ export default function createApp(config: Partial<typeof defaultConfig> = {}) {
 	// } else {
 	// 	app.listen(config.port, callback);
 	// }
-	app.listen({ port: cfg.port }, callback);
+	app.listen({ port: cfg.port, ...(cfg.host ? { host: cfg.host } : {}) }, callback);
 
 	return app;
 }
